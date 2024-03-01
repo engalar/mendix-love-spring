@@ -13,7 +13,6 @@ import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import myfirstmodule.imp.MySpringBootApplication;
 import myfirstmodule.imp.MySpringService;
-import org.springframework.boot.SpringApplication;
 import org.springframework.web.servlet.MyRequestHandler;
 import com.mendix.core.Core;
 import com.mendix.logging.ILogNode;
@@ -29,12 +28,10 @@ public class Java_action extends CustomJavaAction<java.lang.Void>
 	public java.lang.Void executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		// 创建 SpringApplication 实例
-		SpringApplication app = new SpringApplication(MySpringBootApplication.class);
+		MySpringBootApplication.start();
 
 		// 运行应用
-		var ctx = app.run();
-		var service = ctx.getBean(MySpringService.class).doSomething();
+		var service = MySpringBootApplication.ctx.getBean(MySpringService.class).doSomething();
 		this._logNode.info(service != null ? "Success" : "Failure");
 		Core.addRequestHandler("api", new MyRequestHandler());
 		return null;
