@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/spring")
 public class MyRestController {
 
     private static final ILogNode logger = Core.getLogger("MyRestService");
