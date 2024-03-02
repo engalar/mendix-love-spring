@@ -33,7 +33,7 @@ public class Java_action extends CustomJavaAction<java.lang.Void>
 		// 运行应用
 		var service = MySpringBootApplication.ctx.getBean(MySpringService.class).doSomething();
 		this._logNode.info(service != null ? "Success" : "Failure");
-		Core.addRequestHandler("api", new MyRequestHandler());
+		Core.addRequestHandler("api", MySpringBootApplication.ctx.getBean(MyRequestHandler.class));
 		return null;
 		// END USER CODE
 	}
