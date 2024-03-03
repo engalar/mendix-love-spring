@@ -11,9 +11,9 @@ package myfirstmodule.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
+import myfirstmodule.imp.MyRequestHandler;
 import myfirstmodule.imp.MySpringBootApplication;
 import myfirstmodule.imp.MySpringService;
-import org.springframework.web.servlet.MyRequestHandler;
 import com.mendix.core.Core;
 import com.mendix.logging.ILogNode;
 
